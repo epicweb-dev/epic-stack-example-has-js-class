@@ -206,9 +206,21 @@ function Document({
 	theme?: Theme
 	env?: Record<string, string>
 }) {
+	const isClient = typeof document !== 'undefined'
 	return (
-		<html lang="en" className={`${theme} h-full overflow-x-hidden`}>
+		<html
+			lang="en"
+			className={`${theme} h-full overflow-x-hidden ${
+				isClient ? 'has-js' : ''
+			}`}
+		>
 			<head>
+				<script
+					nonce={nonce}
+					dangerouslySetInnerHTML={{
+						__html: `document.documentElement.classList.add('has-js')`,
+					}}
+				/>
 				<ClientHintCheck nonce={nonce} />
 				<Meta />
 				<meta charSet="utf-8" />

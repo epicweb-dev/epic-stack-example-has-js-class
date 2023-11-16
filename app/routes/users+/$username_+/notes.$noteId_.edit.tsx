@@ -3,9 +3,9 @@ import { useLoaderData } from '@remix-run/react'
 import { requireUserId } from '#app/utils/auth.server.ts'
 import { prisma } from '#app/utils/db.server.ts'
 import { invariantResponse } from '#app/utils/misc.tsx'
-import { NoteEditor, action } from './__note-editor.tsx'
+import { NoteEditor, action, links } from './__note-editor.tsx'
 
-export { action }
+export { action, links }
 
 export async function loader({ params, request }: DataFunctionArgs) {
 	const userId = await requireUserId(request)

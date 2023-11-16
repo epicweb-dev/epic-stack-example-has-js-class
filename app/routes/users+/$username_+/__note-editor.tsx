@@ -16,6 +16,7 @@ import {
 	redirect,
 	type DataFunctionArgs,
 	type SerializeFrom,
+	type LinksFunction,
 } from '@remix-run/node'
 import { Form, useFetcher } from '@remix-run/react'
 import { useRef, useState } from 'react'
@@ -33,6 +34,11 @@ import { requireUserId } from '#app/utils/auth.server.ts'
 import { validateCSRF } from '#app/utils/csrf.server.ts'
 import { prisma } from '#app/utils/db.server.ts'
 import { cn, getNoteImgSrc } from '#app/utils/misc.tsx'
+import noteEditorStylesheet from './__note-editor.css'
+
+export const links: LinksFunction = () => [
+	{ rel: 'stylesheet', href: noteEditorStylesheet },
+]
 
 const titleMinLength = 1
 const titleMaxLength = 100
@@ -306,12 +312,12 @@ function ImageChooser({
 			aria-invalid={Boolean(config.errors?.length) || undefined}
 			aria-describedby={config.errors?.length ? config.errorId : undefined}
 		>
-			<div className="flex gap-3">
-				<div className="w-32">
-					<div className="relative h-32 w-32">
+			<div className="note-editor-image__container flex gap-3">
+				<div className="min-w-[8rem]">
+					<div className="relative">
 						<label
 							htmlFor={fields.file.id}
-							className={cn('group absolute h-32 w-32 rounded-lg', {
+							className={cn('group absolute rounded-lg', {
 								'bg-accent opacity-40 focus-within:opacity-100 hover:opacity-100':
 									!previewImage,
 								'cursor-pointer focus-within:ring-4': !existingImage,
@@ -331,7 +337,7 @@ function ImageChooser({
 									)}
 								</div>
 							) : (
-								<div className="flex h-32 w-32 items-center justify-center rounded-lg border border-muted-foreground text-4xl text-muted-foreground">
+								<div className="note-editor-image__add-icon flex h-32 w-32 items-center justify-center rounded-lg border border-muted-foreground text-4xl text-muted-foreground">
 									<Icon name="plus" />
 								</div>
 							)}
@@ -345,7 +351,7 @@ function ImageChooser({
 							) : null}
 							<input
 								aria-label="Image"
-								className="absolute left-0 top-0 z-0 h-32 w-32 cursor-pointer opacity-0"
+								className="note-editor-image__file-input absolute left-0 top-0 h-32 w-32 cursor-pointer opacity-0"
 								onChange={event => {
 									const file = event.target.files?.[0]
 

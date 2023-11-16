@@ -1,0 +1,18 @@
+html:not(.has-js) .note-editor-image__add-icon {
+	display: none;
+}
+
+html:not(.has-js) .note-editor-image__file-input {
+	opacity: 1;
+	position: unset;
+	height: unset;
+	width: unset;
+}
+
+html:not(.has-js) .note-editor-image__container {
+	flex-direction: column;
+}
+
+html:not(.has-js) .note-editor-image__container label {
+	opacity: 1;
+}
