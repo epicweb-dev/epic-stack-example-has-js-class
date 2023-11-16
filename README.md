@@ -1,54 +1,27 @@
-<div align="center">
-  <h1 align="center"><a href="https://www.epicweb.dev/epic-stack">The Epic Stack 🚀</a></h1>
-  <strong align="center">
-    Ditch analysis paralysis and start shipping Epic Web apps.
-  </strong>
-  <p>
-    This is an opinionated project starter and reference that allows teams to
-    ship their ideas to production faster and on a more stable foundation based
-    on the experience of <a href="https://kentcdodds.com">Kent C. Dodds</a> and
-    <a href="https://github.com/epicweb-dev/epic-stack/graphs/contributors">contributors</a>.
-  </p>
-</div>
+# Epic Stack Example: `has-js` class
+
+This is an example implementation of using CSS to ensure that users who don't
+have js enabled have as good a user experience as possible without degrading the
+experience of users who do have js enabled.
+
+Inspired by [@jjenzz](https://twitter.com/jjenzz/status/1720939490233946300).
+
+Check the commit history for what it took to implement this.
+
+To run this locally:
 
 ```sh
-npx create-epic-app@latest
+git clone https://github.com/kentcdodds/epic-stack-example-has-js-class
+cd epic-stack-example-has-js-class
+npm install
+npm run dev
 ```
 
-[![The Epic Stack](https://github-production-user-asset-6210df.s3.amazonaws.com/1500684/246885449-1b00286c-aa3d-44b2-9ef2-04f694eb3592.png)](https://www.epicweb.dev/epic-stack)
+Then open [localhost:3000](http://localhost:3000) in your browser, login as a
+user, and go to the create new note page to find the image uploader. Try it with
+and without JS enabled to have the full experience.
 
-[The Epic Stack](https://www.epicweb.dev/epic-stack)
+Or, you could just watch
+[this video](https://www.epicweb.dev/tips/turn-progressive-enhancement-up-to-11)!
 
-<hr />
-
-## Watch Kent's Introduction to The Epic Stack
-
-[![Epic Stack Talk slide showing Flynn Rider with knives, the text "I've been around and I've got opinions" and Kent speaking in the corner](https://github-production-user-asset-6210df.s3.amazonaws.com/1500684/277818553-47158e68-4efc-43ae-a477-9d1670d4217d.png)](https://www.epicweb.dev/talks/the-epic-stack)
-
-["The Epic Stack" by Kent C. Dodds](https://www.epicweb.dev/talks/the-epic-stack)
-
-## Docs
-
-[Read the docs](https://github.com/epicweb-dev/epic-stack/blob/main/docs)
-(please 🙏).
-
-## Support
-
-- 🆘 Join the
-  [discussion on GitHub](https://github.com/epicweb-dev/epic-stack/discussions)
-  and the [KCD Community on Discord](https://kcd.im/discord).
-- 💡 Create an
-  [idea discussion](https://github.com/epicweb-dev/epic-stack/discussions/new?category=ideas)
-  for suggestions.
-- 🐛 Open a [GitHub issue](https://github.com/epicweb-dev/epic-stack/issues) to
-  report a bug.
-
-## Branding
-
-Want to talk about the Epic Stack in a blog post or talk? Great! Here are some
-assets you can use in your material:
-[EpicWeb.dev/brand](https://epicweb.dev/brand)
-
-## Thanks
-
-You rock 🪨
+[![Video player showing a tutorial video with Kent](https://github-production-user-asset-6210df.s3.amazonaws.com/1500684/283592950-87023c27-2400-4226-91c5-6ddc402b4ae5.png)](https://www.epicweb.dev/tips/turn-progressive-enhancement-up-to-11)
